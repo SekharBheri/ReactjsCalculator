@@ -54,8 +54,6 @@ class Calculator extends React.Component{
 	 
  }
  
- 
- 
  handleCE() {
     let thisWith = new RegExp(/[x+‑\/]$|\d+\.?\d*$|(\(-\d+\.?\d*)$|(\(-)$|\)[x+‑\/]$/);
 	if (this.state.formula.indexOf('=') != -1) {
@@ -75,9 +73,7 @@ class Calculator extends React.Component{
           'pos' : 'neg'
       });
     }, 100);
-  }
-
-  
+  }  
  
  handleEvaluate() {
     if(!this.lockOperators(this.state.formula, this.state.currentVal)) {
@@ -101,16 +97,13 @@ class Calculator extends React.Component{
 		}	
 		
     }
- }
- 
- 
+ } 
  
  lockOperators(formula, currentVal) {
 	
     return formula.lastIndexOf('.') == formula.length - 1 ||
       formula.lastIndexOf('-') == formula.length - 1 || currentVal.indexOf('Met') != -1
- }
-  
+ } 
   
  handleOperators(e){
 	if(!this.lockOperators(this.state.formula, this.state.currentVal)) {
